@@ -1,23 +1,20 @@
- 
-import express from 'express';  
+
+import express from 'express';
+import mongoose from 'mongoose';
+import todoRouter from './routes/todo.js';
+import userRouter from './routes/user.js';
+
+// Connect to database
+await mongoose.connect('mongodb+srv://todo-api:todo-api@databasecluster.lona3.mongodb.net/todo-db?retryWrites=true&w=majority&appName=Databasecluster');
 
 // create an express app
 const app = express();
 
-// define routes
-app.get('/hello', function (req, res, next) {
-   console.log(req.headers)
-   res.json('You visited the hello endpoint'); 
-});
-
-// define routes
-app.get('/goodbye', function(req, res, next) {
-    console.log(req.query)
-    res.json('All the best');
-});
-
+// Use routes
+app.use(todoRouter);
+app.use(userRouter);
 
 // listen for incoming requests
-app.listen(3000, function () {
+app.listen(3000, () => {
     console.log('App is listening on port 3000');
 });
