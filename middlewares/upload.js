@@ -1,5 +1,5 @@
 import multer from "multer";
-    import { multerSaveFilesOrg } from "multer-savefilesorg";
+import { multerSaveFilesOrg } from "multer-savefilesorg";
 
     export const localUpload = multer({dest: 'uploads/'});
     // Savefiles codes

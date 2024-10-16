@@ -34,7 +34,10 @@ export const getTodos = async (req, res, next) => {
         .limit(limit)
         .skip(skip);
         // return response
-        res.status(200).json(todos);
+        res.json({
+            message: 'User logged in!',
+            accessToken: token
+        });
     } catch (error) {
         next(error);
     }
