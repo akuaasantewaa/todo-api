@@ -36,8 +36,8 @@ export const getTodos = async (req, res, next) => {
         .limit(limit)
         .skip(skip);
         // return response
-        res.json({todos
-        });
+        res.json(todos
+        );
     } catch (error) {
         next(error);
     }
