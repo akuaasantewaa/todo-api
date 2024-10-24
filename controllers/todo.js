@@ -44,6 +44,24 @@ export const getTodos = async (req, res, next) => {
 }
 
 
+// export const getAdverts = async (req, res, next) => {
+//     try {
+//         const {filter = "{}",sort="{}", limit = 10, skip = 0 } = req.query;
+//         // fetch todos from database
+//         const todos = await TodoModel
+//         .find(JSON.parse(filter))
+//         .sort(JSON.parse(sort))
+//         .limit(limit)
+//         .skip(skip);
+//         // return response
+//         res.json(todos
+//         );
+//     } catch (error) {
+//         next(error);
+//     }
+// }
+
+
 export const countTodos = async (req, res, next) => {
     try {
         const { filter = '()' } = req.query;

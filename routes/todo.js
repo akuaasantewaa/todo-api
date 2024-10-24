@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { addTodo, countTodos, deleteTodo, getTodos, updateTodo } from "../controllers/todo.js";
-import { localUpload, remoteUpload } from "../middlewares/upload.js";
+import { addTodo, countTodos, deleteTodo, getTodo, getTodos, updateTodo } from "../controllers/todo.js";
+import {  remoteUpload } from "../middlewares/upload.js";
 
 // Create a router
 const todoRouter = Router();
@@ -13,7 +13,7 @@ todoRouter.get('/todos', getTodos);
 // overview
 todoRouter.get('/todos/count', countTodos);
 
-todoRouter.get('/todos/:id', getTodos);
+todoRouter.get('/todos/:id', getTodo);
 
 todoRouter.patch('/todos/:id', updateTodo);
 

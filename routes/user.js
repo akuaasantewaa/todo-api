@@ -11,6 +11,8 @@ userRouter.post('/users/login', loginUser);
 
 userRouter.get('/users/me', getProfile);
 
+// userRouter.get('/users/me/adverts', isAuthenticated, getProfile);
+
 userRouter.post('/users/logout', logoutUser);
 
 userRouter.post('/users/me',userAvartarUpload.single('avatar'), updateProfile);
